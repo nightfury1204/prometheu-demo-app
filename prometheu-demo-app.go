@@ -71,4 +71,6 @@ func main() {
 
 	http.Handle("/metrics", promhttp.HandlerFor(r, promhttp.HandlerOpts{}))
 	log.Fatal(http.ListenAndServe(bind, nil))
+
+	r.Gather()
 }
